@@ -21,6 +21,7 @@
   QemuFwCfgAcpi.c
 
 [Packages]
+  EmbeddedPkg/EmbeddedPkg.dec
   MdeModulePkg/MdeModulePkg.dec
   MdePkg/MdePkg.dec
   OvmfPkg/OvmfPkg.dec
@@ -35,6 +36,10 @@
 
 [Protocols]
   gQemuAcpiTableNotifyProtocolGuid              # PROTOCOL PRODUCES
+  gFdtClientProtocolGuid                        # PROTOCOL CONSUMED
 
 [Pcd]
   gEfiMdeModulePkgTokenSpaceGuid.PcdPciDisableBusEnumeration
+
+[Depex]
+  gFdtClientProtocolGuid
